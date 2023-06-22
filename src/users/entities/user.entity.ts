@@ -25,6 +25,9 @@ export class UserEntity {
   @Column({ name: 'cpf', nullable: false })
   cpf: string;
 
+  @Column({ name: 'type_user', nullable: false })
+  typeUser: number;
+
   @CreateDateColumn({ name: 'created_at'})
   created_at: Date;
 
