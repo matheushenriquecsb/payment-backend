@@ -14,7 +14,7 @@ import {
     id: string;
   
     @Column({ name: 'state_id', nullable: false })
-    stateId: string;
+    stateId: number;
   
     @Column({ name: 'name', nullable: false })
     name: string;
