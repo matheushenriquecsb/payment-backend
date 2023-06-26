@@ -11,7 +11,7 @@ import {
 @Entity({ name: 'user' })
 export class UserEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id: number;
 
   @Column({ name: 'name', nullable: false })
   name: string;
@@ -24,6 +24,9 @@ export class UserEntity {
  
   @Column({ name: 'cpf', nullable: false })
   cpf: string;
+
+  @Column({ name: 'password', nullable: false })
+  password: string;
 
   @Column({ name: 'type_user', nullable: false })
   typeUser: number;

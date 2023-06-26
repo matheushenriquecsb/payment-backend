@@ -19,8 +19,8 @@ import {
     @Column({ name: 'complement', nullable: true })
     complement: string;
   
-    @Column({ name: 'number_address'})
-    numberAddress: number;
+    @Column({ name: 'number', nullable: false})
+    number: number;
    
     @Column({ name: 'cep', nullable: false })
     cep: string;

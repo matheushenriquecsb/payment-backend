@@ -11,7 +11,7 @@ import {
   @Entity({ name: 'city' })
   export class CityEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    id: number;
   
     @Column({ name: 'state_id', nullable: false })
     stateId: number;
