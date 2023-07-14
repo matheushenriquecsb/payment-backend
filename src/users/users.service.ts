@@ -25,6 +25,15 @@ export class UsersService {
 
   async getAllUsers(): Promise<UserEntity[]> {
     return this.userRepository.find();
+  } 
+
+  async getAddressByUserId(userId: number):Promise<UserEntity>{
+    return this.userRepository.findOne({
+      where: {
+        id: userId
+      },
+      relations: ['addresses'],
+    })
   }
 
   async findUserById(userId: number): Promise<UserEntity>{
@@ -37,7 +46,18 @@ export class UsersService {
     if(!user) {
       throw new NotFoundException('User not found')
     }
-
     return user
+  }
+
+  async findUserByEmail(email: string){
+    const user = await this.userRepository.findOne({
+          where: {
+            email: email,
+          },
+        });
+        if(!user) {
+          throw new NotFoundException('User not found')
+        }
+        return user;
   }
 }

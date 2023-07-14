@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { IsEmail, IsString, IsStrongPassword } from 'class-validator';
+import { IsEmail, IsPhoneNumber, IsString, IsStrongPassword } from 'class-validator';
 
 export class CreateUserRequest {
   @IsString()
@@ -10,6 +10,7 @@ export class CreateUserRequest {
   email: string;
 
   @IsString()
+  @IsPhoneNumber('BR')
   phone: string;
 
   @IsString()

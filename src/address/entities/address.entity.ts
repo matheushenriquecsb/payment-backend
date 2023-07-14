@@ -1,11 +1,14 @@
 /* eslint-disable prettier/prettier */
 
+import { UserEntity } from 'src/users/entities/user.entity';
 import {
     Entity,
     PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    UpdateDateColumn, 
+    UpdateDateColumn,
+    ManyToOne,
+    JoinColumn,
   } from 'typeorm';
   
   @Entity({ name: 'address' })
@@ -33,5 +36,9 @@ import {
   
     @UpdateDateColumn({ name: 'updated_at' })
     updated_at: Date;
+
+    @ManyToOne(() => UserEntity, (user) => user.addresses)
+    @JoinColumn({ name: 'user_id', referencedColumnName: 'id'})
+    user?: UserEntity;
   }
   
