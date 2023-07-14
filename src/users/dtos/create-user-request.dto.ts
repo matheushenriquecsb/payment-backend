@@ -19,4 +19,7 @@ export class CreateUserRequest {
   @IsStrongPassword()
   @IsString()
   password: string;
+
+  @IsString()
+  access_token: string
 }
